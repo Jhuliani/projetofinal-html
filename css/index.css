@@ -1,0 +1,21 @@
+@import url("./header.css");
+@import url("./main.css");
+@import url("./footer.css");
+
+:root{
+    --cor-de-fundo:#271F3F;
+    --cor-dois:#362648;
+    --cor-tres:#672B44;
+    --cor-quatro:#9B3447;
+    --cor-cinco:#CE3F4F;   
+    --font-principal:"Roboto";
+}
+
+body{
+    background-color: var(--cor-de-fundo);
+    font-family: var(--font-principal);
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+
+}

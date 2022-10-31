@@ -1,0 +1,16 @@
+.opcoes__footer{
+    padding: 5px;
+    margin: 20px;
+}
+
+.redes__imagem{
+    width: 25px;
+    height: 25px;
+    margin: 20px;
+}
+
+.redes{
+    display: flex;
+    justify-content:left;
+}
+

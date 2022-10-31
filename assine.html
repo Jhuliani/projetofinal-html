@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="O CINEBR é o seu site de filmes nacionais.">
+    <meta name="keywords" content="cinebr, filmes nacionais, filmes brasileiros">    
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/assine.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>CINEBR | HOME</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div clas="container">
+            <input type="checkbox" id="menu" class="container__botao">
+            <label for="menu">
+                <span class="cabecalho__menu container__imagem"></span>
+            </label>
+            <ul class="lista-menu">
+                <li class="lista-menu__assine">
+                    <div class="lista-menu-assine__botao">
+                        <a href="#" class="lista-menu__link">Assine agora</a>
+                    </div>                    
+                </li>
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">QUEM SOMOS</a>
+                </li>
+                <li class="lista-menu__item">
+                    <a href="#" class="lista-menu__link">PROGRAMAÇÃO</a>
+                </li>
+            </ul>
+            
+            <a href="index.html" class="container__logo container__imagem">
+            <img src="./imagens/LOGO.PNG" alt="logo CINEBR">
+            </a>   
+           
+        </div> 
+        
+        <ul class="opcoes">
+            <li class="opcoes__titulo">
+                <a href="#" class="lista-menu__link">QUEM SOMOS</a>
+            </li>
+            <li class="opcoes__titulo">
+                <a href="#" class="lista-menu__link">PROGRAMAÇÃO</a>
+            </li>
+        </ul>
+        
+        
+        <li class="lista-menu__assine2">
+            <div class="lista-menu-assine__botao">
+                <a href="#" class="lista-menu__link">Assine agora</a>
+            </div>                    
+        </li>
+
+    </header>
+
+    <main>
+        <h2 id="menuForms">Formulário de novos assinantes:</h2>
+    <div class="Formulario_conectado_com_planilha_google">
+        <h3 id="msg"></h3>
+        <form>
+            <label>Nome Completo</label>
+            <input type="text" name="nome" placeholder="Seu nome é..."> </br>
+
+            <label>E-mail</label>
+            <input type="email" name="email" placeholder="dominio@exemplo.com" required > </br>
+
+            <label>Telefone</label>
+            <input type="tel" name="telefone" placeholder="(XX) XXXX-XXXX" required> </br>
+
+            <input type="submit" id="sub">
+        </form>
+
+<script> //Com JavaScript
+            let form = document.querySelector("form");
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let data = new FormData(form);
+                fetch('https://script.google.com/macros/s/AKfycbxQDuBBWWKUoWA1BU8aFShIJuhgGSzTSGgO7GfeW5Qp1a324mRAmUlPP5uB0c-v5aOm/exec', {
+                    method: "POST",
+                    body: data
+                })
+                    .then(res => res.text())
+                    .then(data => { 
+                        document.querySelector("#msg").innerHTML = "Mensagem após envio"
+                        document.querySelector("#sub").value = "Mensagem quando termina o envio";
+                    });
+            });
+        </script>
+</div>
+
+
+    </main>
+
+    <footer>
+        
+        <hr>
+        <section class="redes">
+        
+            <a href="#" target="_blank" rel="noopener noreferrer" >
+                <img src="./imagens/linkedin.png" alt="linkedin" class="redes__imagem">               
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" >
+                <img src="./imagens/instagram.png" alt="linkedin"class="redes__imagem">                
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+                <img src="./imagens/facebook.png" alt="linkedin" class="redes__imagem">                
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" >
+                <img src="./imagens/twitter.png" alt="linkedin" class="redes__imagem">                
+            </a>
+           
+        </section>
+        <hr>
+        <section class="copyright">
+            <p>© Copyright 2022 CineBR Programação de Filmes Ltda</p>
+        </section>
+    </footer>
+</body>
+</html>
